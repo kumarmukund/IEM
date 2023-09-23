@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GALLERY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Navbar  -->
+    <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+      <img
+        class="w-16 rounded-full"
+        src="LOGO.png"
+        alt="INDRAPURI EKTA MANCH"
+      />
+      &nbsp;&nbsp;
+      <a href="index.html" class="flex items-center">
+        &nbsp;
+        <span
+          class="self-center whitespace-nowrap text-xl font-semibold text-blue-600"
+          >INDRAPURI EKTA MANCH</span
+        >
+      </a>
+      <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-blue-600 p-3">
+          <svg
+            class="block h-4 w-4 fill-current"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Mobile menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+      <a
+        class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-200 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+        href="index.html"
+        >HOME</a
+      >
+      &nbsp;
+
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="Gallery.html"
+        >GALLERY</a
+      >
+      &nbsp;
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="Contact.html"
+        >CONTACT</a
+      >
+      <!-- <a class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200" href="#">Sign up</a> -->
+    </nav>
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <img class="w-16 rounded-full" src="LOGO.png" alt="" /> &nbsp;&nbsp;
+          <a href="index.html" class="flex items-center">
+            <span
+              class="self-center whitespace-nowrap text-xl font-semibold text-blue-600"
+              >INDRAPURI EKTA MANCH</span
+            > </a
+          >&nbsp;&nbsp;
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="index.html"
+                >HOME</a
+              >
+            </li>
+
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="Gallery.html"
+                >GALLERY</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="Contact.html"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mt-auto">
+          <p class="my-4 text-xs text-center text-blue-400">
+            <span>Copyright © 2023</span>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <!-- component -->
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="grid gap-4">
+          <div>
+            <!-- <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://upload.wikimedia.org/wikipedia/commons/0/03/Kashi_Vishwanath_Temple_Banaras.jpg"
+              alt=""
+            /> -->
+            <video class="h-auto max-w-full rounded-lg" autoplay controls>
+              <source src="video 1.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div>
+            <!-- <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://pbs.twimg.com/media/FGRnUzPVEAAbqM8?format=jpg&name=large"
+              alt=""
+            /> -->
+            <video class="h-auto max-w-full rounded-lg" autoplay controls>
+              <source src="video 1.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://pbs.twimg.com/media/FGRnNpAVUAYqRYv?format=jpg&name=large"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://pbs.twimg.com/media/FGRnP_TUUAAttG3?format=jpg&name=large"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://i.pinimg.com/originals/c0/7d/17/c07d17d7ca0b9f39f5aded4b6dca8f02.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Benares-_The_Golden_Temple%2C_India%2C_ca._1915_%28IMP-CSCNWW33-OS14-66%29.jpg/1280px-Benares-_The_Golden_Temple%2C_India%2C_ca._1915_%28IMP-CSCNWW33-OS14-66%29.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://www.jagranimages.com/images/newimg/27072020/27_07_2020-shri-kashi-vishwanath-temple_20557350.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://www.jansatta.com/wp-content/uploads/2021/12/Kashi-Vishwanath-Mandir.png?w=1024"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://staticimg.amarujala.com/assets/images/2021/11/07/750x506/kashi-vishwanath-dham_1636258507.jpeg?w=674&dpr=1.0"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="grid gap-4">
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://staticimg.amarujala.com/assets/images/2020/01/13/750x506/kashi-vishwanath-mandir-varanasi_1578924152.png?w=700&dpr=2.0"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Ahilya_Ghat_by_the_Ganges%2C_Varanasi.jpg/800px-Ahilya_Ghat_by_the_Ganges%2C_Varanasi.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              class="h-auto max-w-full rounded-lg"
+              src="https://upload.wikimedia.org/wikipedia/commons/2/25/Chet_Singh_Ghat_in_Varanasi.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
